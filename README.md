@@ -1,6 +1,6 @@
 # microscopy
 
-These are bits of ImageJ macro code that might be useful. 
+These are bits of microscopy image analysis code that might be useful. 
 
 To open them, just drag the .ijm file into the ImageJ toolbar
 
@@ -19,6 +19,7 @@ For images with multiple z-planes and channels. Open all images from a folder, c
 ### Duplicate_with_gaussian_blur.ijm
 For time series images. Open all the images from a folder, gaussian blur, keep a few slices from a timeseries and save the result 
 
+
 ## Tracking dots with Trackmate
 
 Trackmate is an ImageJ plugin for tracking: https://imagej.net/plugins/trackmate/ 
@@ -29,3 +30,15 @@ I didn't end up using it in the end for the Zeng 2024 paper but it is still usef
 
 ### trackmate_process_batch.py
 This is written with Jython. 
+
+
+## CellProfiler
+
+I used CellProfiler a lot as it is really good for detecting cells in a monolayer. 
+https://cellprofiler.org/ 
+
+Input = 2D or 3D images that are split into channels with the same base name e.g. C1_image.tif and C2_image.tif
+
+To open the project file, just download the project file and open it from within the CellProfiler application. 
+
+
