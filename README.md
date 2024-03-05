@@ -2,10 +2,10 @@
 
 These are bits of microscopy image analysis code that might be useful. 
 
+
+## Simple ImageJ macros
+
 To open them, just drag the .ijm file into the ImageJ toolbar
-
-
-## Simple code bits
 
 ### Save_all_images.ijm
 This is for when you have multiple images open in ImageJ and you want to save them all at once and then close the windows. 
