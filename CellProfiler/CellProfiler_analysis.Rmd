@@ -20,6 +20,7 @@ if (!require("tidyverse")) {
 ```{r}
 df<- read.csv("MaskedNuclei.csv")
 
+#sort data into groups based on the filename of each image
 nuclei<- df %>%
   select(ImageNumber, FileName_OrigBlue, Intensity_MeanIntensity_OrigGreen, Intensity_MeanIntensity_OrigBlue) %>%
   mutate(genotype = case_when(grepl("WT", FileName_OrigBlue)~ "WT", TRUE~ "CKO"),
@@ -59,6 +60,7 @@ cko <- nuclei2 %>% filter(genotype == "CKO")
 ```
 
 ```{r}
+#wrangle data into a wide format
 wt_means<- wt %>%
   ungroup() %>%
   group_by(time, ImageNumber) %>%
