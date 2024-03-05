@@ -48,7 +48,8 @@ I have provided two example images, where C1- is the RNA channel, and C2- is the
 
 To open the project file, just download the project file and open it from within the CellProfiler application. 
 
-##SYTO analysis.Rmd
+## CellProfiler_analysis.Rmd
+This is an R notebook (open using RStudio) to format the results of CellProfiler into an easier-to-handle format for downstream analysis e.g. in Prism. I have provided an example CellProfiler output (MaskedNuclei.csv) to try. 
 
 
 
