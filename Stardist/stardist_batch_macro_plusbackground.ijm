@@ -28,7 +28,7 @@ run("Clear Results");
 function processFolder(input) {
     list = getFileList(input);
     list = Array.sort(list);
-    for (i = 24; i < list.length; i++) {
+    for (i = 1; i < list.length; i++) {
         // Check if the file is a TIFF file
         if (endsWith(list[i], ".tif")) {
             // Do the processing here by adding your own code.
