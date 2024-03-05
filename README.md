@@ -26,7 +26,9 @@ For time series images. Open all the images from a folder, gaussian blur, keep a
 Stardist is a nuclei/cell detection method that picks up star-convex shapes. https://github.com/stardist/stardist 
 
 ### stardist_batch_macro_plusbackground.ijm
-They have an ImageJ plugin but you can also use it in Python if you prefer. Here, I have uploaded a macro to use the ImageJ plugin. The input is an image of mouse cortex with 2 channels: DAPI and SYTO. The macro uses Stardist to detect nuclei in the DAPI channel, and use those ROIs to measure both the DAPI and SYTO channels. Also in the code (which can be deleted optionally) I have set a threshold, and then measured the background (i.e. everything not in the nucleus) by combining the thresholded image with the ROIs found by Stardist.  
+They have an ImageJ plugin but you can also use it in Python if you prefer. Here, I have uploaded a macro to use the ImageJ plugin. The plugin has been trained on a nuclei dataset https://imagej.net/plugins/stardist
+
+The input is an image of mouse cortex with 2 channels: DAPI and SYTO. The macro uses Stardist to detect nuclei in the DAPI channel, and use those ROIs to measure both the DAPI and SYTO channels. Also in the code (which can be deleted optionally) I have set a threshold, and then measured the background (i.e. everything not in the nucleus) by combining the thresholded image with the ROIs found by Stardist.  
 
 I have provided a sample image (2023_06_15_SYTO_F1_slice2-1.tif)
 
