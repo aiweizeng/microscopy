@@ -31,10 +31,7 @@ They have an ImageJ plugin but you can also use it in Python if you prefer. Here
 The input is an image of mouse cortex with 2 channels: DAPI and SYTO. The macro uses Stardist to detect nuclei in the DAPI channel, and use those ROIs to measure both the DAPI and SYTO channels. Also in the code (which can be deleted optionally) I have set a threshold, and then measured the background (i.e. everything not in the nucleus) by combining the thresholded image with the ROIs found by Stardist.  
 
 I have provided a sample image (2023_06_15_SYTO_F1_slice2-1.tif)
-![image](https://github.com/aiweizeng/microscopy/assets/65457201/9cffe322-24b6-4e93-846a-1f2d7c092a2a)
-![image](https://github.com/aiweizeng/microscopy/assets/65457201/df3f38f2-f2b3-4c2b-a4b0-9736087eb305)
-
-
+![image](https://github.com/aiweizeng/microscopy/assets/65457201/99ad3d93-fdfb-49e5-8602-33c03224d144)
 
 
 ## Tracking dots with Trackmate
