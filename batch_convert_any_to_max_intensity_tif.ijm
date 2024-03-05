@@ -1,7 +1,6 @@
 // Open all files from a source directory
 // and save them in a target directory in TIFF format
-// Albert Cardona 2007
-//
+
 source_dir = getDirectory("Source Directory");
 target_dir = getDirectory("Target Directory");
 if (File.exists(source_dir) && File.exists(target_dir)) {
