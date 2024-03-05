@@ -24,12 +24,15 @@ For time series images. Open all the images from a folder, gaussian blur, keep a
 
 Trackmate is an ImageJ plugin for tracking: https://imagej.net/plugins/trackmate/ 
 
+### trackmate_process_batch.py
+
+This is written with Jython, which you can open in ImageJ.
+
 You can use the GUI in ImageJ to test out the parameters based on your images and then subsequently plug in those parameters in to the batch script below (under the section that says Prepare Settings Object). 
 
 I didn't end up using it in the end for the Zeng 2024 paper but it is still useful to have. 
 
-### trackmate_process_batch.py
-This is written with Jython. 
+
 
 
 ## CellProfiler
@@ -37,8 +40,16 @@ This is written with Jython.
 I used CellProfiler a lot as it is really good for detecting cells in a monolayer. 
 https://cellprofiler.org/ 
 
+### Analysing_nuclear_intensity_cellprofiler.cpproj 
+This code analyses the nucleus and cytoplasm of a two-channel image, where one of the images marks the nucleus. In this case, I used it to analyse the nuclear intensity of RNA in a monolayer of fibroblasts. 
+
 Input = 2D or 3D images that are split into channels with the same base name e.g. C1_image.tif and C2_image.tif
 
 To open the project file, just download the project file and open it from within the CellProfiler application. 
+
+##SYTO analysis.Rmd
+
+
+
 
 
