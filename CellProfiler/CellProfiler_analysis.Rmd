@@ -1,0 +1,92 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+#setup
+
+
+# Clear your workspace
+rm(list=ls())
+
+# Load useful packages
+if (!require("tidyverse")) {
+  install.packages("tidyverse", dependencies = TRUE)
+  library(tidyverse)
+}
+```
+
+```{r}
+df<- read.csv("MaskedNuclei.csv")
+
+nuclei<- df %>%
+  select(ImageNumber, FileName_OrigBlue, Intensity_MeanIntensity_OrigGreen, Intensity_MeanIntensity_OrigBlue) %>%
+  mutate(genotype = case_when(grepl("WT", FileName_OrigBlue)~ "WT", TRUE~ "CKO"),
+         time = case_when(grepl("T24", FileName_OrigBlue)~ "T24", 
+                          grepl("T36", FileName_OrigBlue)~ "T36", 
+                          grepl("48", FileName_OrigBlue)~ "T48", 
+                          TRUE~ "T60")) %>%
+  mutate(syto_bydapi = Intensity_MeanIntensity_OrigGreen / Intensity_MeanIntensity_OrigBlue)
+
+```
+
+```{r}
+#remove outliers 
+remove_outliers <- function(x, na.rm = TRUE, ...) {
+  qnt <- quantile(x, probs=c(.25, .75), na.rm = na.rm, ...)
+  H <- 1.5 * IQR(x, na.rm = na.rm)
+  y <- x
+  y[x < (qnt[1] - H)] <- NA
+  y[x > (qnt[2] + H)] <- NA
+  y
+}
+
+nuclei2 <- nuclei %>%
+  group_by(genotype) %>%
+  mutate(syto_bydapi = remove_outliers(syto_bydapi))
+
+
+which(is.na(nuclei2))
+```
+
+
+```{r}
+wt <- nuclei2 %>% filter(genotype == "WT")
+
+cko <- nuclei2 %>% filter(genotype == "CKO")
+
+```
+
+```{r}
+ggplot(wt, aes(x=time, y = syto_bydapi)) +
+  geom_boxplot()
+```
+
+
+```{r}
+wt_means<- wt %>%
+  ungroup() %>%
+  group_by(time, ImageNumber) %>%
+  mutate(row = row_number()) %>%
+  ungroup() %>%
+  select(row, time, ImageNumber, syto_bydapi) %>%
+  pivot_wider(names_from = c(time, ImageNumber), 
+              values_from = syto_bydapi) %>%
+  select(-row)
+
+write.csv(wt_means, "WT_mean_sytodapi.csv", row.names = F)
+
+cko_means<- cko %>%
+  ungroup() %>%
+  group_by(time, ImageNumber) %>%
+  mutate(row = row_number()) %>%
+  ungroup() %>%
+  select(row, time, ImageNumber, syto_bydapi) %>%
+  pivot_wider(names_from = c(time, ImageNumber), 
+              values_from = syto_bydapi) %>%
+  select(-row)
+
+write.csv(cko_means, "CKO_mean_sytodapi.csv", row.names = F)
+```
+
