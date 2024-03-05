@@ -43,7 +43,8 @@ https://cellprofiler.org/
 ### Analysing_nuclear_intensity_cellprofiler.cpproj 
 This code analyses the nucleus and cytoplasm of a two-channel image, where one of the images marks the nucleus. In this case, I used it to analyse the nuclear intensity of RNA in a monolayer of fibroblasts. 
 
-Input = 2D or 3D images that are split into channels with the same base name e.g. C1_image.tif and C2_image.tif
+Input = 2D or 3D images that are split into channels with the same base name e.g. C1_image.tif and C2_image.tif 
+I have provided two example images, where C1- is the RNA channel, and C2- is the DNA channel. 
 
 To open the project file, just download the project file and open it from within the CellProfiler application. 
 
