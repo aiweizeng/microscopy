@@ -41,7 +41,7 @@ I used CellProfiler a lot as it is really good for detecting cells in a monolaye
 https://cellprofiler.org/ 
 
 ### Analysing_nuclear_intensity_cellprofiler.cpproj 
-This code analyses the nucleus and cytoplasm of a two-channel image, where one of the images marks the nucleus. In this case, I used it to analyse the nuclear intensity of RNA in a monolayer of fibroblasts. 
+This code analyses the nucleus and cytoplasm of a two-channel image, where one of the channels marks the nucleus. In this case, I used it to analyse the nuclear intensity of RNA in a monolayer of fibroblasts. 
 
 Input = 2D or 3D images that are split into channels with the same base name e.g. C1_image.tif and C2_image.tif 
 
