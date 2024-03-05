@@ -21,9 +21,9 @@ For time series images. Open all the images from a folder, gaussian blur, keep a
 
 ## Tracking dots with Trackmate
 
-Trackmate is an ImageJ plugin for tracking:https://imagej.net/plugins/trackmate/ 
+Trackmate is an ImageJ plugin for tracking: https://imagej.net/plugins/trackmate/ 
 
-You can use the GUI in ImageJ to test out the parameters based on your images and then subsequently plug in those parameters in to the batch script below (under the section that says Prepare Settings Object. 
+You can use the GUI in ImageJ to test out the parameters based on your images and then subsequently plug in those parameters in to the batch script below (under the section that says Prepare Settings Object). 
 
 I didn't end up using it in the end for the Zeng 2024 paper but it is still useful to have. 
 
