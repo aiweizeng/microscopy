@@ -13,10 +13,10 @@ This link has all of the possible ImageJ macro functions: https://imagej.net/ij/
 This is for when you have multiple images open in ImageJ and you want to save them all at once and then close the windows. 
 
 ### batch_convert_any_to_max_intensity_tif.ijm
-For images with multiple z-planes. Open all images from a folder, create a maximum intensity z-projection and save the result
+For images with multiple z-planes (not timeseries). Open all images from a folder, create a maximum intensity z-projection and save the result
 
 ### SPLITCHANNEL_MAX_batch.ijm
-For images with multiple z-planes and channels. Open all images from a folder, create a maximum intensity z-projection, split the channels and save the resulting channels
+For images with multiple z-planes and channels (not timeseries). Open all images from a folder, create a maximum intensity z-projection, split the channels and save the resulting channels
 
 ### Duplicate_with_gaussian_blur.ijm
 For time series images. Open all the images from a folder, gaussian blur, keep a few slices from a timeseries and save the result 
@@ -33,7 +33,7 @@ I have provided a sample image (2023_06_15_SYTO_F1_slice2-1.tif)
 
 ## Tracking dots with Trackmate
 
-Trackmate is an ImageJ plugin for tracking: https://imagej.net/plugins/trackmate/ 
+Trackmate is an ImageJ plugin for tracking dots in time series data: https://imagej.net/plugins/trackmate/ 
 
 ### trackmate_process_batch.py
 
