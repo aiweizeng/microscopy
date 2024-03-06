@@ -21,6 +21,7 @@ For images with multiple z-planes and channels (not timeseries). Open all images
 ### Duplicate_with_gaussian_blur.ijm
 For time series images. Open all the images from a folder, gaussian blur, keep a few slices from a timeseries and save the result 
 
+******************************************
 ## Stardist
 
 Stardist is a nuclei/cell detection method that picks up star-convex shapes. https://github.com/stardist/stardist 
@@ -34,7 +35,7 @@ I have provided a sample image (2023_06_15_SYTO_F1_slice2-1.tif)
 
 ![image](https://github.com/aiweizeng/microscopy/assets/65457201/99ad3d93-fdfb-49e5-8602-33c03224d144)
 
-
+******************************************
 ## Tracking dots with Trackmate
 
 Trackmate is an ImageJ plugin for tracking dots in time series data: https://imagej.net/plugins/trackmate/ 
@@ -47,6 +48,7 @@ You can use the GUI in ImageJ to test out the parameters based on your images an
 
 I didn't end up using it in the end for the Zeng 2024 paper but it is still useful to have. 
 
+******************************************
 ## Tracking and analysing GEMs
 
 I followed Manu Derivery's code for tracking quantum dots in Stangherlin 2021. Follow this link for comprehensive instructions.  https://github.com/deriverylab/Stangherlin2021/tree/main
@@ -79,7 +81,7 @@ I made only minor changes to the code to fit my experiment:
 3. AZ_FOV_medianMSD_batch.m : I adapted the code so that all of my image files were in the same folder (Derivery code is assuming that the images are grouped in different folders). I also changed it so that it reads in individual tracks files instead of the pooled tracks 
 4. I created a new MATLAB script
 
-
+******************************************
 ## CellProfiler
 
 I used CellProfiler a lot as it is really good for detecting cells in a monolayer. 
