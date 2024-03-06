@@ -79,7 +79,6 @@ I made only minor changes to the code to fit my experiment:
 1. I adapted the thunderstorm tracking code and tweaked the parameters for my microscope set up (100x spinning disk) and for the behaviour of the GEMs
 2. AZ_tracking_MSD_batch_dataset.m: I adapted the code so that all of my image files were in the same folder (Derivery code is assuming that the images are grouped in different folders).
 3. AZ_FOV_medianMSD_batch.m : I adapted the code so that all of my image files were in the same folder (Derivery code is assuming that the images are grouped in different folders). I also changed it so that it reads in individual tracks files instead of the pooled tracks 
-4. I created a new MATLAB script
 
 ******************************************
 ## CellProfiler
