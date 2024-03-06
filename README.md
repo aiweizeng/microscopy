@@ -62,7 +62,8 @@ Thunderstorm plugin for ImageJ is used to track GEMs by Gaussian fitting. https:
 The detected GEMs are tracked in MATLAB, and kept only if they are longer than 15 time points. Then the MSD is calculated and diffusion coefficient calculated by MSD(t) = 4Dt^alpha
 https://tinevez.github.io/msdanalyzer/
 
-NB: you need to make sure you have curve fitting toolbox in your MATLAB 
+NB: you need to make sure you have curve fitting toolbox installed in your MATLAB. 
+
 In the same folder as the MATLAB file, you need these files: 
 - msdanalyzer.m - function to calculate MSD
 - track2.m - function to create tracks 
