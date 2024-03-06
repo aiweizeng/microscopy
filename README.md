@@ -47,7 +47,13 @@ You can use the GUI in ImageJ to test out the parameters based on your images an
 
 I didn't end up using it in the end for the Zeng 2024 paper but it is still useful to have. 
 
+## Tracking and analysing GEMs
 
+I followed Manu Derivery's code for tracking quantum dots in Stangherlin 2021. Follow this link for comprehensive instructions.  https://github.com/deriverylab/Stangherlin2021/tree/main
+
+I made minor changes to the code to fit my experiment:
+1. batch_thunderstorm_AZ.ijm: I adapted the thunderstorm tracking code and tweaked the parameters for my microscope set up (100x spinning disk) and for the behaviour of the GEMs
+2. I adapted the code to 
 
 
 ## CellProfiler
@@ -66,8 +72,6 @@ To open the project file, just download the project file and open it from within
 
 ### CellProfiler_analysis.Rmd
 This is an R notebook (open using RStudio) to format the results of CellProfiler into an easier-to-handle format for downstream analysis e.g. in Prism. I have provided an example CellProfiler output (MaskedNuclei.csv) to try. 
-
-
 
 
 
