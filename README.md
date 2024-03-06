@@ -51,9 +51,33 @@ I didn't end up using it in the end for the Zeng 2024 paper but it is still usef
 
 I followed Manu Derivery's code for tracking quantum dots in Stangherlin 2021. Follow this link for comprehensive instructions.  https://github.com/deriverylab/Stangherlin2021/tree/main
 
-I made minor changes to the code to fit my experiment:
-1. batch_thunderstorm_AZ.ijm: I adapted the thunderstorm tracking code and tweaked the parameters for my microscope set up (100x spinning disk) and for the behaviour of the GEMs
-2. I adapted the code to 
+Ideally your movie will have around 1000 frames, 10 ms interval 
+
+### Step 1: detection of GEMs (batch_thunderstorm_AZ.ijm)
+Thunderstorm plugin for ImageJ is used to track GEMs by Gaussian fitting. https://zitmen.github.io/thunderstorm/ 
+
+### Step 2: Tracking tracks and calculating MSD (AZ_tracking_MSD_batch_dataset.m)
+The detected GEMs are tracked in MATLAB, and kept only if they are longer than 15 time points. Then the MSD is calculated and diffusion coefficient calculated by MSD(t) = 4Dt^alpha
+https://tinevez.github.io/msdanalyzer/
+
+NB: you need to make sure you have curve fitting toolbox in your MATLAB 
+In the same folder as the MATLAB file, you need these files: 
+- msdanalyzer.m - function to calculate MSD
+- track2.m - function to create tracks 
+- 1.tif_timingms2.xls (an excel sheet with the actual timings of each image)
+
+### Step 3: extracting average diffusion coefficients (AZ_FOV_medianMSD_batch.m)
+Filters out tracks with good fit (R<0.9) and immobile (alpha < 0.45) then calculates the median diffusion coefficient for each field of view. 
+
+### Step 4: create representative tracking images (GEM_track_analysis_test_3t3_making_plots_csv.mlx)
+This reads in individual tracking files, calculates MSD, and plots the tracks coloured by the diffusion coefficient. I added an option to choose the axis limits in order to zoom in on the relevant representative areas. It saves the plots as a very high resolution png. 
+
+### Differences between my code and Manu 
+I made only minor changes to the code to fit my experiment:
+1. I adapted the thunderstorm tracking code and tweaked the parameters for my microscope set up (100x spinning disk) and for the behaviour of the GEMs
+2. AZ_tracking_MSD_batch_dataset.m: I adapted the code so that all of my image files were in the same folder (Derivery code is assuming that the images are grouped in different folders).
+3. AZ_FOV_medianMSD_batch.m : I adapted the code so that all of my image files were in the same folder (Derivery code is assuming that the images are grouped in different folders). I also changed it so that it reads in individual tracks files instead of the pooled tracks 
+4. I created a new MATLAB script
 
 
 ## CellProfiler
