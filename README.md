@@ -73,7 +73,7 @@ In the same folder as the MATLAB file, you need these files:
 Filters out tracks with good fit (R<0.9) and immobile (alpha < 0.45) then calculates the median diffusion coefficient for each field of view. 
 
 ### Step 4: create representative tracking images (GEM_track_analysis_test_3t3_making_plots_csv.mlx)
-This reads in individual tracking files, calculates MSD, and plots the tracks coloured by the diffusion coefficient. I added an option to choose the axis limits in order to zoom in on the relevant representative areas. It saves the plots as a very high resolution png. 
+This reads in individual tracking files, calculates MSD, and plots the tracks coloured by the diffusion coefficient. I added an option to choose the axis limits in order to zoom in on the relevant representative areas. It saves the plots as a very high resolution PDF. 
 
 ### Differences between my code and Manu 
 I made only minor changes to the code to fit my experiment:
