@@ -67,7 +67,7 @@ NB: you need to make sure you have curve fitting toolbox installed in your MATLA
 In the same folder as the MATLAB file, you need these files: 
 - msdanalyzer.m - function to calculate MSD
 - track2.m - function to create tracks 
-- 1.tif_timingms2.xls (an excel sheet with the actual timings of each image)
+- 1.tif_timingms2.xls (an excel sheet with the actual timings of each image- update accordingly for your experiment)
 
 ### Step 3: extracting average diffusion coefficients (AZ_FOV_medianMSD_batch.m)
 Filters out tracks with good fit (R<0.9) and immobile (alpha < 0.45) then calculates the median diffusion coefficient for each field of view. 
